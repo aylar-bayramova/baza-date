@@ -1,0 +1,35 @@
+/* 1. Tüm elementler için temel kutu modeli ayarı */
+* {
+    box-sizing: border-box;
+}
+
+/* 2. CSS Değişkenlerinin Tanımlanması (Büyük Ekranlar İçin) */
+:root {
+    --paginaspace-stanga-dreapta: 10%; /* Sayfa sol-sağ boşluğu */
+    --bölge-padding: 20px;            /* Tüm metin alanları için eşit padding */
+    --grid-gap-degeri: 20px;          /* Grid hücreleri arası boşluk */
+}
+
+/* 3. Orta Boy Ekranlar (Tablet) İçin Ayarlar */
+@media (max-width: 992px) {
+    :root {
+        --paginaspace-stanga-dreapta: 5%;  /* Boşluk orta ekranda küçüldü */
+        --grid-gap-degeri: 15px;           /* Gap orta ekranda küçüldü */
+    }
+}
+
+/* 4. Küçük Ekranlar (Mobil) İçin Ayarlar */
+@media (max-width: 576px) {
+    :root {
+        --paginaspace-stanga-dreapta: 2%;  /* Boşluk mobil ekranda minimum oldu */
+        --grid-gap-degeri: 10px;           /* Gap mobil ekranda minimum oldu */
+    }
+}
+
+/* 5. Sayfa İçeriğini Sıkıştırma Alanı (Body veya ana sarmalayıcı) */
+body {
+    margin: 0;
+    padding-left: var(--paginaspace-stanga-dreapta);
+    padding-right: var(--paginaspace-stanga-dreapta);
+    font-family: sans-serif; /* Google fontunu ekleyene kadar geçici */
+}
